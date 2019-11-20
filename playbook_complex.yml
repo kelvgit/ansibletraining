@@ -24,7 +24,7 @@
       state: directory
   - name: Enabling the sharing
     win_share:
-      name: windown_share
+      name: windows_share
       description: this is a custom share
       path: C:\custom_share
       full: Administrator
