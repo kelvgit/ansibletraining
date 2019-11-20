@@ -2,7 +2,7 @@
 - name: Creating users
   hosts: all
   vars:
-    - username: one
+  - username: one
   tasks:
   - name: Creating user user_{{username}}
     win_user:
