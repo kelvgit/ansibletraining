@@ -32,5 +32,5 @@
   - name: Copying some custom content
     win_copy:
       content: "This is a shared content"
-      dest: C:\\custom_share\\shared.txt
+      dest: C:\custom_share\shared.txt
 ...
