@@ -1,0 +1,10 @@
+---
+- name: Creating users
+  hosts: all
+  vars_files:
+    - variables\vars.yml
+  tasks:
+  - name: Creating user user_{{username}}
+    win_user:
+      name: "user_{{username}}"
+      state: present
