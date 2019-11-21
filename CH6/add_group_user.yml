@@ -1,0 +1,20 @@
+---
+- name: Create a group and user and set the membership
+  hosts: all
+  tasks:
+  - name: Create a group
+    win_group:
+      name: IT Ops
+      state: present
+  - name: Create a user user_four and set membership
+    win_user:
+      name: user_four
+      password: P4ssw0rd
+      state: present
+      groups:
+        - IT Ops
+      groups_action: add
+  - name: Create the user profile
+    win_user_profile:
+      username: user_four
+      state: present

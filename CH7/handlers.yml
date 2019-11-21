@@ -1,0 +1,22 @@
+---
+- name: Testing block and rescue
+  hosts: all
+  tasks:
+  - name: Block 1
+    block:
+    - name: Install flashplayer
+      win_chocolatey:
+        name: flashplayerpp
+        state: present
+    rescue:
+    - name: Rollback flashplayer
+      win_chocolatey:
+        name: flashplayerppapi
+        state: absent
+    always:
+    - name: I am god
+      debug:
+        msg: I will run no matter what.
+  - name: This is another task
+    debug:
+      msg: final task

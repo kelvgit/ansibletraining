@@ -1,0 +1,11 @@
+---
+- name: Testing Powershell
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: Get services
+    win_shell: |
+      Get-Service
+  #   register: output
+  # - debug:
+  #     var: output

@@ -1,0 +1,12 @@
+---
+- name: Creating a file
+  hosts: all
+  tasks:
+  - name: Create a temp folder
+    win_file:
+      path: C:\Temp
+      state: directory
+  - name: Create a file, modify timestamp if file already present
+    win_file:
+      path: C:\Temp\test.conf
+      state: touch

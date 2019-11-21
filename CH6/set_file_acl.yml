@@ -1,0 +1,16 @@
+---
+- name: Grant user full control
+  hosts: all
+  tasks:
+  - name: Grant user_one full control to test.conf
+    win_acl:
+      path: C:\Temp\test.conf
+      user: user_one
+      rights: FullControl
+      type: allow
+      state: present
+      inherit: ContainerInherit, ObjectInherit
+  - name: Update user_one as owner of test.conf
+    win_owner:
+      path: C:\Temp\test.conf
+      user: user_one
